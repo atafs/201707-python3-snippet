@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript</h2>
+
+<p id="lists"></p>
+<p id="clashing-times" style="color:blue;"></p>
+
+<script>
+    const starTimes = [1730, 1000, 1400, 1045, 1700]
+    const endTimes = [1800, 1200, 1020, 1500, 1830]
+
+    function clashingTimes(starTimes, endTimes) {
+        return endTimes.sort().map((value, index) => value > starTimes.sort()[index+1]
+            ? false
+            : true
+        )
+    }
+
+    //print in the page
+    document.getElementById("lists").innerHTML = "starTimes = [" + starTimes.sort() + "]<br>endTimes = [" + endTimes.sort() + "]<br>"
+    document.getElementById("clashing-times").innerHTML = clashingTimes(starTimes, endTimes)
+
+</script>
+
+</body>
+</html>
